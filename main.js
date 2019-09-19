@@ -2,7 +2,6 @@ require('dotenv').config();
 const { app, Menu, Tray, shell } = require('electron');
 const { menubar } = require('menubar');
 const slackZoom = require('./slack-zoom');
-const url = require('url');
 const path = require('path');
 
 const menuTemplate = [
