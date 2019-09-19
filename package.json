@@ -1,0 +1,30 @@
+{
+  "name": "slack-zoom-electron",
+  "version": "1.0.0",
+  "description": "An integration between Slack and Zoom to notify other Slack users when you are on a call",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^6.0.9"
+  },
+  "dependencies": {
+    "@slack/client": "^5.0.2",
+    "chalk": "^2.4.2",
+    "dotenv": "^8.1.0",
+    "menubar": "^6.0.8",
+    "node-notifier": "^5.4.3",
+    "process-exists": "^3.1.0"
+  }
+}

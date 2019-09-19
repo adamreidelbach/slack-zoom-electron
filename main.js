@@ -1,0 +1,37 @@
+require('dotenv').config();
+const { app, Menu, Tray, shell } = require('electron');
+const { menubar } = require('menubar');
+const slackZoom = require('./slack-zoom');
+const url = require('url');
+const path = require('path');
+
+const menuTemplate = [
+  {
+    label: 'About', click() {
+      shell.openExternal('https://www.github.com')
+    }
+  },
+  {
+    label: 'Quit Slack-Zoom', click() {
+      app.quit()
+    }
+  },
+]
+
+const iconPath = path.join(__dirname, 'assets', 'phone.png');
+
+app.on('ready', () => {
+  const tray = new Tray(iconPath);
+  const contextMenu = Menu.buildFromTemplate(menuTemplate);
+  tray.setToolTip('Slack-Zoom is running')
+  tray.setContextMenu(contextMenu);
+
+  const mb = menubar({
+    tray
+  });
+
+  mb.on('ready', () => {
+    console.log('Menubar app is ready.');
+    slackZoom();
+  });
+});
