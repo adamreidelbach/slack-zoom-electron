@@ -19,8 +19,10 @@ const menuTemplate = [
 
 const iconPath = path.join(__dirname, 'assets', 'phone.png');
 
+let tray = null;
+
 app.on('ready', () => {
-  const tray = new Tray(iconPath);
+  tray = new Tray(iconPath);
   const contextMenu = Menu.buildFromTemplate(menuTemplate);
   tray.setToolTip('Slack-Zoom is running')
   tray.setContextMenu(contextMenu);
