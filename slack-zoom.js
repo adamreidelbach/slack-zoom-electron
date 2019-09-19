@@ -40,7 +40,7 @@ module.exports = () => {
     const message = isRunning ? "Joining a Zoom call" : "Leaving a Zoom call";
     notifier.notify({
       title: "Slack Zoom Status",
-      icon: path.join(__dirname, "zoom.png"),
+      icon: path.join(__dirname, "assets", "zoom.png"),
       sound: true,
       message
     });

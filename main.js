@@ -8,7 +8,7 @@ const path = require('path');
 const menuTemplate = [
   {
     label: 'About', click() {
-      shell.openExternal('https://www.github.com')
+      shell.openExternal('https://github.com/adamreidelbach/slack-zoom-electron')
     }
   },
   {
@@ -31,7 +31,6 @@ app.on('ready', () => {
   });
 
   mb.on('ready', () => {
-    console.log('Menubar app is ready.');
     slackZoom();
   });
 });
