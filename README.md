@@ -7,8 +7,8 @@ This app seeks to provide a convenient way to indicate to fellow Slack users tha
 1. clone the repo
 2. run `npm install` at the root of the directory
 3. You will need to retrieve your Slack token, which can be found [here](https://api.slack.com/docs/oauth-test-tokens), under __Legacy token generator__. Treat this token like you would any other password, it is not something that should be publicly shared.
-4. Retrieve your slack userId, which can be found [here](https://api.slack.com/methods/auth.test/test). You will need to provide the previously mentioned Slack token.
-5. Create a `.env` file at the root of this project to store your slack userId and token. That file should look something like this:
+4. Retrieve your Slack userId, which can be found [here](https://api.slack.com/methods/auth.test/test). You will need to provide the previously mentioned Slack token.
+5. Create a `.env` file at the root of this project to store your Slack userId and token. That file should look something like this:
 ```
 SLACK_TOKEN="xoxp-XXXXXXXXXX-XXXXXXXXXX"
 SLACK_USER_ID="123ABC123"
