@@ -22,22 +22,22 @@ module.exports = () => {
     year: "2-digit"
   };
 
-  let isRunning = false;
+  let isOnCall = false;
 
   function checkZoom() {
     global.setTimeout(async function refresh() {
-      // const isOn = await isCameraOn();
-      const isOn = await processExists("zoom.us");
-      if ((isOn && !isRunning) || (!isOn && isRunning)) {
-        isRunning = isOn;
-        updateStatus(isRunning);
+      // const isCameraOn = await isCameraOn();
+      const isZoomOn = await processExists("zoom.us");
+      if (isZoomOn !== isOnCall) {
+        isOnCall = isZoomOn;
+        updateStatus(isOnCall);
       }
       global.setTimeout(refresh, INTERVAL);
     }, INTERVAL);
   }
 
-  function updateStatus(isRunning) {
-    const message = isRunning ? "Joining a Zoom call" : "Leaving a Zoom call";
+  function updateStatus(isOnCall) {
+    const message = isOnCall ? "Joining a Zoom call" : "Leaving a Zoom call";
     notifier.notify({
       title: "Slack Zoom Status",
       icon: path.join(__dirname, "assets", "zoom.png"),
@@ -51,8 +51,8 @@ module.exports = () => {
         // https://api.slack.com/methods/users.profile.set
         web.users.profile.set({
           profile: {
-            status_text: isRunning ? "On a zoom call..." : "",
-            status_emoji: isRunning ? ":zoom:" : ""
+            status_text: isOnCall ? "On a zoom call..." : "",
+            status_emoji: isOnCall ? ":zoom:" : ""
           }
         });
       },
