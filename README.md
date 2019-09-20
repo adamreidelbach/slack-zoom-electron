@@ -2,6 +2,8 @@
 
 This app seeks to provide a convenient way to indicate to fellow Slack users that you are in a Zoom meeting. The basis of this project is built around [Elijah Manor's](https://twitter.com/elijahmanor) Gist that does exactly that, [check it out](https://gist.github.com/elijahmanor/8c03d061f265596cb87140d88414354d).
 
+__Known issue__: If a user quits the Zoom application before and after a meeting, this app will work as expected. If a user keeps the Zoom application running, even if they are not in a meeting, the app will assume the user is still in a meeting.
+
 ## Getting Started
 
 1. clone the repo
